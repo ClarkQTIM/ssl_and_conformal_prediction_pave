@@ -1,0 +1,9 @@
+# Allowlist: ignore everything by default (data may contain patient-level info),
+# then explicitly re-include only reviewed file types.
+*
+!*/
+!.gitignore
+!*.py
+!*.sh
+__pycache__/
+*.pyc
