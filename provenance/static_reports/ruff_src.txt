@@ -1,0 +1,160 @@
+src/analysis_functions.py:3:29: F401 [*] `matplotlib.pyplot` imported but unused
+src/analysis_functions.py:6:27: F401 [*] `sklearn.utils.resample` imported but unused
+src/analysis_functions.py:8:35: F401 [*] `calculation_functions.calculate_accuracy_and_count_by_predicted_class` imported but unused
+src/analysis_functions.py:9:75: F401 [*] `plotting_functions.plot_and_save_grid_by_predicted_class` imported but unused
+src/analysis_functions.py:11:185: F401 [*] `plotting_functions.create_histogram_of_pred_length_size` imported but unused
+src/analysis_functions.py:49:30: E712 Avoid equality comparisons to `True`; use `cuq_df[misclass_col]:` for truth checks
+src/analysis_functions.py:107:5: F841 Local variable `correct_classification_subset` is assigned to but never used
+src/analysis_functions.py:107:44: E712 Avoid equality comparisons to `True`; use `cuq_df[corr_col]:` for truth checks
+src/analysis_functions.py:108:47: E712 Avoid equality comparisons to `False`; use `not cuq_df[corr_col]:` for false checks
+src/analysis_functions.py:111:77: E712 Avoid equality comparisons to `False`; use `not ...:` for false checks
+src/analysis_functions.py:112:73: E712 Avoid equality comparisons to `True`; use `...:` for truth checks
+src/analysis_functions.py:115:5: F841 Local variable `pct_misclassifications` is assigned to but never used
+src/analysis_functions.py:116:5: F841 Local variable `pct_misclassifications_not_extreme` is assigned to but never used
+src/analysis_functions.py:117:5: F841 Local variable `pct_misclassifications_extreme` is assigned to but never used
+src/analysis_functions.py:279:9: F841 Local variable `normal_misclassified_as_pcplus_col` is assigned to but never used
+src/analysis_functions.py:280:9: F841 Local variable `pcplus_misclassified_as_normal_col` is assigned to but never used
+src/analysis_functions.py:281:9: F841 Local variable `normal_misclassified_as_gz_col` is assigned to but never used
+src/analysis_functions.py:282:9: F841 Local variable `gz_misclassified_as_normal_col` is assigned to but never used
+src/analysis_functions.py:283:9: F841 Local variable `pcplus_misclassified_as_gz_col` is assigned to but never used
+src/analysis_functions.py:284:9: F841 Local variable `gz_misclassified_as_pcplus_col` is assigned to but never used
+src/analysis_functions.py:294:44: E712 Avoid equality comparisons to `True`; use `cuq_df[corr_col]:` for truth checks
+src/analysis_functions.py:299:47: E712 Avoid equality comparisons to `False`; use `not cuq_df[corr_col]:` for false checks
+src/analysis_functions.py:303:77: E712 Avoid equality comparisons to `False`; use `not ...:` for false checks
+src/analysis_functions.py:305:5: F841 Local variable `pct_misclassifications_not_extreme` is assigned to but never used
+src/analysis_functions.py:307:73: E712 Avoid equality comparisons to `True`; use `...:` for truth checks
+src/analysis_functions.py:309:5: F841 Local variable `pct_misclassifications_extreme` is assigned to but never used
+src/analysis_new.py:4:19: F811 [*] Redefinition of unused `stats` from line 3: `stats` redefined here
+src/analysis_new.py:5:18: F811 [*] Redefinition of unused `pd` from line 1: `pd` redefined here
+src/analysis_new.py:8:19: F811 [*] Redefinition of unused `stats` from line 4: `stats` redefined here
+src/analysis_new.py:10:18: F811 [*] Redefinition of unused `pd` from line 5: `pd` redefined here
+src/analysis_new.py:15:8: F401 [*] `subprocess` imported but unused
+src/analysis_new.py:19:40: F401 [*] `sklearn.metrics.auc` imported but unused
+src/analysis_new.py:20:35: F401 [*] `sklearn.preprocessing.label_binarize` imported but unused
+src/analysis_new.py:28:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+src/analysis_new.py:36:19: B006 Do not use mutable data structures for argument defaults
+src/analysis_new.py:37:17: B006 Do not use mutable data structures for argument defaults
+src/analysis_new.py:48:14: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/analysis_new.py:54:34: B905 `zip()` without an explicit `strict=` parameter
+src/analysis_new.py:94:19: B006 Do not use mutable data structures for argument defaults
+src/analysis_new.py:95:17: B006 Do not use mutable data structures for argument defaults
+src/analysis_new.py:106:34: B905 `zip()` without an explicit `strict=` parameter
+src/analysis_new.py:110:9: RUF059 Unpacked variable `lev_stat` is never used
+src/analysis_new.py:147:5: RUF059 Unpacked variable `fig` is never used
+src/analysis_new.py:194:45: B905 `zip()` without an explicit `strict=` parameter
+src/analysis_new.py:399:66: RUF003 Comment contains ambiguous `×` (MULTIPLICATION SIGN). Did you mean `x` (LATIN SMALL LETTER X)?
+src/analysis_new.py:399:85: RUF003 Comment contains ambiguous `×` (MULTIPLICATION SIGN). Did you mean `x` (LATIN SMALL LETTER X)?
+src/analysis_new.py:679:13: PD010 `.pivot_table` is preferred to `.pivot` or `.unstack`; provides same functionality
+src/analysis_new.py:687:23: RUF059 Unpacked variable `expected` is never used
+src/analysis_new.py:739:27: RUF059 Unpacked variable `expected` is never used
+src/analysis_new.py:756:44: RUF003 Comment contains ambiguous `×` (MULTIPLICATION SIGN). Did you mean `x` (LATIN SMALL LETTER X)?
+src/analysis_new.py:866:32: RUF003 Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?
+src/analysis_new.py:883:14: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/analysis_new.py:906:28: RUF001 String contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?
+src/analysis_new.py:996:5: F841 Local variable `model_name_map` is assigned to but never used
+src/calculation_functions.py:26:18: F401 [*] `pandas` imported but unused
+src/calculation_functions.py:103:28: F821 Undefined name `stats`
+src/calculation_functions.py:113:18: F821 Undefined name `stats`
+src/calculation_functions.py:116:5: F841 Local variable `mean_diff` is assigned to but never used
+src/calculation_functions.py:138:22: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/calculation_functions.py:184:5: F811 Redefinition of unused `calculate_accuracy_and_count_by_predicted_class` from line 33: `calculate_accuracy_and_count_by_predicted_class` redefined here
+src/collect_images_for_paper.py:13:21: F401 [*] `pathlib.Path` imported but unused
+src/create_cuq_csv.py:30:8: F401 [*] `ast` imported but unused
+src/create_cuq_csv.py:31:8: F401 [*] `torch` imported but unused
+src/create_cuq_csv.py:34:29: F401 [*] `matplotlib.pyplot` imported but unused
+src/create_cuq_csv.py:35:19: F401 [*] `seaborn` imported but unused
+src/create_cuq_csv.py:38:29: F401 [*] `sklearn.metrics.roc_curve` imported but unused
+src/create_cuq_csv.py:38:40: F401 [*] `sklearn.metrics.roc_auc_score` imported but unused
+src/create_cuq_csv.py:38:55: F401 [*] `sklearn.metrics.confusion_matrix` imported but unused
+src/create_cuq_csv.py:39:35: F401 [*] `sklearn.preprocessing.label_binarize` imported but unused
+src/create_cuq_csv.py:41:1: F403 `from cuq_classification_algorithms import *` used; unable to detect undefined names
+src/create_cuq_csv.py:42:56: F401 [*] `utility_functions.additions_to_csvs` imported but unused
+src/create_cuq_csv.py:75:5: E722 Do not use bare `except`
+src/create_cuq_csv.py:95:22: F405 `get_calibration_scores_lac` may be undefined, or defined from star imports
+src/create_cuq_csv.py:97:22: F405 `get_calibration_scores_aps` may be undefined, or defined from star imports
+src/create_cuq_csv.py:105:72: F405 `cuq_pred_set_lac` may be undefined, or defined from star imports
+src/create_cuq_csv.py:106:9: E722 Do not use bare `except`
+src/create_cuq_csv.py:107:49: F405 `cuq_pred_set_lac` may be undefined, or defined from star imports
+src/create_cuq_csv.py:110:72: F405 `cuq_pred_set_aps` may be undefined, or defined from star imports
+src/create_cuq_csv.py:111:9: E722 Do not use bare `except`
+src/create_cuq_csv.py:112:49: F405 `cuq_pred_set_aps` may be undefined, or defined from star imports
+src/create_cuq_csv.py:120:9: E722 Do not use bare `except`
+src/create_cuq_csv.py:206:13: PD015 Use `.merge` method instead of `pd.merge` function. They have equivalent functionality.
+src/create_cuq_csv.py:214:9: B007 Loop control variable `index` not used within loop body
+src/cuq_classification_algorithms.py:76:92: RUF002 Docstring contains ambiguous `α` (GREEK SMALL LETTER ALPHA). Did you mean `a` (LATIN SMALL LETTER A)?
+src/cuq_classification_algorithms.py:108:5: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:109:5: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:110:5: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:112:9: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:120:5: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:121:5: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:122:5: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:123:5: F821 Undefined name `plt`
+src/cuq_classification_algorithms.py:124:5: F821 Undefined name `plt`
+src/delong.py:14:9: B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+src/delong.py:49:14: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/delong.py:54:34: B905 `zip()` without an explicit `strict=` parameter
+src/dev_script.py:29:14: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/fine_grain_collection_analysis.py:175:43: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/fine_grain_collection_analysis.py:322:5: F841 Local variable `csv_path` is assigned to but never used
+src/fine_grain_collection_analysis.py:327:22: PD010 `.pivot_table` is preferred to `.pivot` or `.unstack`; provides same functionality
+src/fine_grain_collection_analysis.py:328:27: PD010 `.pivot_table` is preferred to `.pivot` or `.unstack`; provides same functionality
+src/fine_grain_collection_analysis.py:340:5: F811 Redefinition of unused `construct_csv_paths` from line 57: `construct_csv_paths` redefined here
+src/main.py:3:8: F401 [*] `sys` imported but unused
+src/main.py:5:17: F401 [*] `numpy` imported but unused
+src/main.py:6:8: F401 [*] `ast` imported but unused
+src/main.py:8:29: F401 [*] `sklearn.metrics.confusion_matrix` imported but unused
+src/main.py:9:19: F401 [*] `seaborn` imported but unused
+src/main.py:10:29: F401 [*] `matplotlib.pyplot` imported but unused
+src/main.py:13:31: F401 [*] `utility_functions.convert_strings_to_list` imported but unused
+src/main.py:13:75: F401 [*] `utility_functions.parse_confusion_matrix` imported but unused
+src/main.py:90:56: PD002 `inplace=True` should be avoided; it has inconsistent behavior
+src/main.py:92:45: PD002 `inplace=True` should be avoided; it has inconsistent behavior
+src/main.py:95:56: PD002 `inplace=True` should be avoided; it has inconsistent behavior
+src/main.py:97:45: PD002 `inplace=True` should be avoided; it has inconsistent behavior
+src/main.py:106:5: E722 Do not use bare `except`
+src/main.py:152:29: F541 [*] f-string without any placeholders
+src/main.py:153:32: F541 [*] f-string without any placeholders
+src/main.py:154:53: F541 [*] f-string without any placeholders
+src/main.py:155:56: F541 [*] f-string without any placeholders
+src/main.py:156:48: F541 [*] f-string without any placeholders
+src/main.py:157:51: F541 [*] f-string without any placeholders
+src/main.py:158:37: F541 [*] f-string without any placeholders
+src/plotting_functions.py:30:8: F401 [*] `sklearn` imported but unused
+src/plotting_functions.py:41:35: F401 [*] `calculation_functions.calculate_accuracy_and_count_by_predicted_class` imported but unused
+src/plotting_functions.py:107:5: E722 Do not use bare `except`
+src/plotting_functions.py:135:5: RUF059 Unpacked variable `fpr_micro` is never used
+src/plotting_functions.py:135:16: RUF059 Unpacked variable `tpr_micro` is never used
+src/plotting_functions.py:200:20: RUF005 Consider `[*list(auroc.values()), auroc_micro]` instead of concatenation
+src/plotting_functions.py:311:58: PD004 `.notna` is preferred to `.notnull`; functionality is equivalent
+src/plotting_functions.py:399:15: PD010 `.pivot_table` is preferred to `.pivot` or `.unstack`; provides same functionality
+src/plotting_functions.py:459:5: RUF059 Unpacked variable `fig` is never used
+src/plotting_functions.py:599:25: F811 [*] Redefinition of unused `bootstrap` from line 38: `bootstrap` redefined here
+src/plotting_functions.py:600:17: F811 [*] Redefinition of unused `np` from line 32: `np` redefined here
+src/plotting_functions.py:601:18: F811 [*] Redefinition of unused `pd` from line 31: `pd` redefined here
+src/plotting_functions.py:602:19: F811 [*] Redefinition of unused `sns` from line 29: `sns` redefined here
+src/plotting_functions.py:603:29: F811 [*] Redefinition of unused `plt` from line 28: `plt` redefined here
+src/plotting_functions.py:604:8: F811 [*] Redefinition of unused `os` from line 33: `os` redefined here
+src/plotting_functions.py:636:19: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/plotting_functions.py:652:36: PD003 `.isna` is preferred to `.isnull`; functionality is equivalent
+src/plotting_functions.py:660:26: PD011 Use `.to_numpy()` or `.array` instead of `.values`
+src/plotting_functions.py:951:64: E712 Avoid equality comparisons to `True`; use `df[correct_pred_col]:` for truth checks
+src/plotting_functions.py:956:66: E712 Avoid equality comparisons to `False`; use `not df[correct_pred_col]:` for false checks
+src/plotting_functions.py:969:93: B905 `zip()` without an explicit `strict=` parameter
+src/plotting_functions.py:973:95: B905 `zip()` without an explicit `strict=` parameter
+src/plotting_functions.py:1007:5: F841 Local variable `boxplot` is assigned to but never used
+src/plotting_functions.py:1054:5: F841 Local variable `pred_length_col` is assigned to but never used
+src/plotting_functions.py:1089:19: RUF059 Unpacked variable `p_value` is never used
+src/plotting_functions.py:1098:19: RUF059 Unpacked variable `pval` is never used
+src/plotting_functions.py:1143:5: F841 Local variable `boxplot` is assigned to but never used
+src/plotting_functions.py:1165:5: F811 Redefinition of unused `create_histogram_of_pred_length_size` from line 382: `create_histogram_of_pred_length_size` redefined here
+src/plotting_functions.py:1182:15: PD010 `.pivot_table` is preferred to `.pivot` or `.unstack`; provides same functionality
+src/t_test.py:34:58: RUF003 Comment contains ambiguous `×` (MULTIPLICATION SIGN). Did you mean `x` (LATIN SMALL LETTER X)?
+src/t_test.py:36:34: B905 `zip()` without an explicit `strict=` parameter
+src/t_test.py:40:17: RUF003 Comment contains ambiguous `’` (RIGHT SINGLE QUOTATION MARK). Did you mean ``` (GRAVE ACCENT)?
+src/t_test.py:41:9: RUF059 Unpacked variable `lev_stat` is never used
+src/troubleshooting.py:2:17: F401 [*] `numpy` imported but unused
+src/utility_functions.py:167:9: B007 Loop control variable `index` not used within loop body
+src/utility_functions.py:191:9: B007 Loop control variable `index` not used within loop body
+Found 158 errors.
+[*] 47 fixable with `--fix` (58 unsafe fixes available with `--fix --unsafe-fixes`).

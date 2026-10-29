@@ -13,3 +13,6 @@ __pycache__/
 !provenance/
 !provenance/dr_ssl_sl_pip_freeze.txt
 !provenance/environment_info.txt
+!provenance/audit_tools_pip_freeze.txt
+!provenance/static_reports/
+!provenance/static_reports/*.txt
