@@ -1,0 +1,21 @@
+# One entry per claim / table cell / figure panel. Populated in Phase 3.
+# status: unchecked | verified | discrepancy | unreproducible
+claims: []
+# Example entry (delete when real entries exist):
+# - id: C-001
+#   paper_location: "Table 2, row DINO-RN50, col Coverage @ alpha=0.10"
+#   claim_text: ""
+#   reported_value: null
+#   script: ""
+#   function: ""
+#   config_hparams: {}
+#   alpha: 0.10
+#   seeds: []
+#   input_csv: {path: "", sha256: ""}
+#   model_checkpoint: ""
+#   split: ""
+#   reproduced_legacy: null
+#   reproduced_refactor: null
+#   abs_diff: null
+#   status: unchecked
+#   notes: ""

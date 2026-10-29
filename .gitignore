@@ -5,5 +5,7 @@
 !.gitignore
 !*.py
 !*.sh
+!*.md
+!*.yaml
 __pycache__/
 *.pyc
