@@ -9,3 +9,7 @@
 !*.yaml
 __pycache__/
 *.pyc
+# provenance: track environment records only (the file manifest stays local)
+!provenance/
+!provenance/dr_ssl_sl_pip_freeze.txt
+!provenance/environment_info.txt

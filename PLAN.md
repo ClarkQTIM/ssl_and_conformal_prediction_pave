@@ -61,7 +61,7 @@ Bugs that change a paper number are fixed and the paper updated (paper edits are
 - [ ] **Silent failures:** bare `except`, `errors='ignore'`, `fillna`, `dropna`, `astype` truncation, integer division, in-place mutation of shared DataFrames, chained assignment.
 - [ ] **Parsing:** prediction columns stored as stringified lists (`"[0.1, 0.9]"`), so check `eval`/`literal_eval`, length, sum-to-1, and NaNs.
 - [ ] **Hardcoded values:** thresholds, alphas, paths, class counts, model lists. Anything that should be a parameter but is a literal.
-- [ ] **Dead/duplicated code:** `analysis_new.py` vs `analysis_functions.py`, `dev_script.py`, `troubleshooting.py`, duplicated `cuq_classification_algorithms.py`, and `create_cuq_csv.py` (top-level vs `aa_*`).
+- [ ] **Dead/duplicated code:** `analysis_functions.py` vs `analysis_new.py` (note: `analysis_new.py` **is live**. It writes the paper's `*_eval_setlength_heatmap.png` and `*_stacked_gt_dist.png`, lines 805 and 872, into `analysis_outputs_eval/`), `dev_script.py`, `troubleshooting.py`, duplicated `cuq_classification_algorithms.py`, and `create_cuq_csv.py` (top-level vs `aa_*`).
 - [ ] **Naming vs behavior:** each function's name, docstring, and behavior agree (contract tests).
 
 ## Tooling (non-LLM checks carry the weight)

@@ -1,0 +1,8 @@
+# Environment snapshot taken 2026-10-29T12:39:30-06:00
+env: dr_ssl_sl (pyenv 3.12.0)
+env path: /persist/python_virtual_environments/clachris/.pyenv/versions/3.12.0/envs/dr_ssl_sl
+python 3.12.0 (main, Jan  9 2025, 11:46:09) [GCC 11.4.0]
+platform Linux-6.8.0-146-generic-x86_64-with-glibc2.39
+torch 2.2.2+cu121 cuda 12.1 cudnn 8902 cuda_available True
+Linux ophlappc05 6.8.0-146-generic #146-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep  3 16:12:30 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+      2 NVIDIA A100 80GB PCIe, 560.35.05
