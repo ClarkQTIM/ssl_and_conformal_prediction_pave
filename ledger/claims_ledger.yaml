@@ -1,21 +1,2793 @@
-# One entry per claim / table cell / figure panel. Populated in Phase 3.
-# status: unchecked | verified | discrepancy | unreproducible
-claims: []
-# Example entry (delete when real entries exist):
-# - id: C-001
-#   paper_location: "Table 2, row DINO-RN50, col Coverage @ alpha=0.10"
-#   claim_text: ""
-#   reported_value: null
-#   script: ""
-#   function: ""
-#   config_hparams: {}
-#   alpha: 0.10
-#   seeds: []
-#   input_csv: {path: "", sha256: ""}
-#   model_checkpoint: ""
-#   split: ""
-#   reproduced_legacy: null
-#   reproduced_refactor: null
-#   abs_diff: null
-#   status: unchecked
-#   notes: ""
+generated_by: verification/reproduce_paper_tables.py
+note: GENERATED FILE. Do not edit by hand; rerun the script.
+claims:
+- id: C-001:T1-DenseNet121-Normal-AUC_SL
+  paper_location: Table 1, DenseNet121 Normal, SL AUC
+  claim_text: OvR AUC, SL
+  reported_value: 0.87
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8721005212574919
+  reproduced_refactor: null
+  abs_diff: 0.0021005212574919385
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-002:T1-DenseNet121-Normal-AUC_SSL
+  paper_location: Table 1, DenseNet121 Normal, SSL AUC
+  claim_text: OvR AUC, SSL
+  reported_value: 0.87
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8692386146727947
+  reproduced_refactor: null
+  abs_diff: 0.0007613853272052662
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-003:T1-DenseNet121-Normal-sig
+  paper_location: Table 1, DenseNet121 Normal, Sig.
+  claim_text: DeLong p<0.05 (uncorrected)
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: MLstatkit Delong_test (cross-checked, F-015)
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.6029; Bonferroni(/6) significant: False (F-014)'
+- id: C-004:T1-DenseNet121-Severe-AUC_SL
+  paper_location: Table 1, DenseNet121 Severe, SL AUC
+  claim_text: OvR AUC, SL
+  reported_value: 0.82
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8221495487963806
+  reproduced_refactor: null
+  abs_diff: 0.0021495487963806292
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-005:T1-DenseNet121-Severe-AUC_SSL
+  paper_location: Table 1, DenseNet121 Severe, SSL AUC
+  claim_text: OvR AUC, SSL
+  reported_value: 0.84
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8416484300081143
+  reproduced_refactor: null
+  abs_diff: 0.001648430008114321
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-006:T1-DenseNet121-Severe-sig
+  paper_location: Table 1, DenseNet121 Severe, Sig.
+  claim_text: DeLong p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: MLstatkit Delong_test (cross-checked, F-015)
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0447; Bonferroni(/6) significant: False (F-014)'
+- id: C-007:T1-ResNet50-Normal-AUC_SL
+  paper_location: Table 1, ResNet50 Normal, SL AUC
+  claim_text: OvR AUC, SL
+  reported_value: 0.87
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8708185720781707
+  reproduced_refactor: null
+  abs_diff: 0.0008185720781707095
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-008:T1-ResNet50-Normal-AUC_SSL
+  paper_location: Table 1, ResNet50 Normal, SSL AUC
+  claim_text: OvR AUC, SSL
+  reported_value: 0.88
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8778333260543967
+  reproduced_refactor: null
+  abs_diff: 0.0021666739456033257
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-009:T1-ResNet50-Normal-sig
+  paper_location: Table 1, ResNet50 Normal, Sig.
+  claim_text: DeLong p<0.05 (uncorrected)
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: MLstatkit Delong_test (cross-checked, F-015)
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.2238; Bonferroni(/6) significant: False (F-014)'
+- id: C-010:T1-ResNet50-Severe-AUC_SL
+  paper_location: Table 1, ResNet50 Severe, SL AUC
+  claim_text: OvR AUC, SL
+  reported_value: 0.83
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.832615136836411
+  reproduced_refactor: null
+  abs_diff: 0.002615136836411014
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-011:T1-ResNet50-Severe-AUC_SSL
+  paper_location: Table 1, ResNet50 Severe, SSL AUC
+  claim_text: OvR AUC, SSL
+  reported_value: 0.84
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8443624136320046
+  reproduced_refactor: null
+  abs_diff: 0.004362413632004625
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-012:T1-ResNet50-Severe-sig
+  paper_location: Table 1, ResNet50 Severe, Sig.
+  claim_text: DeLong p<0.05 (uncorrected)
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: MLstatkit Delong_test (cross-checked, F-015)
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.3280; Bonferroni(/6) significant: False (F-014)'
+- id: C-013:T1-EffNetV2S-Normal-AUC_SL
+  paper_location: Table 1, EffNetV2S Normal, SL AUC
+  claim_text: OvR AUC, SL
+  reported_value: 0.87
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8682880711931377
+  reproduced_refactor: null
+  abs_diff: 0.0017119288068623284
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-014:T1-EffNetV2S-Normal-AUC_SSL
+  paper_location: Table 1, EffNetV2S Normal, SSL AUC
+  claim_text: OvR AUC, SSL
+  reported_value: 0.88
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8755944108043396
+  reproduced_refactor: null
+  abs_diff: 0.004405589195660364
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-015:T1-EffNetV2S-Normal-sig
+  paper_location: Table 1, EffNetV2S Normal, Sig.
+  claim_text: DeLong p<0.05 (uncorrected)
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: MLstatkit Delong_test (cross-checked, F-015)
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.3212; Bonferroni(/6) significant: False (F-014)'
+- id: C-016:T1-EffNetV2S-Severe-AUC_SL
+  paper_location: Table 1, EffNetV2S Severe, SL AUC
+  claim_text: OvR AUC, SL
+  reported_value: 0.81
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8058164695468292
+  reproduced_refactor: null
+  abs_diff: 0.004183530453170881
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-017:T1-EffNetV2S-Severe-AUC_SSL
+  paper_location: Table 1, EffNetV2S Severe, SSL AUC
+  claim_text: OvR AUC, SSL
+  reported_value: 0.84
+  script: verification/reproduce_paper_tables.py
+  function: sklearn roc_auc_score
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 0.8367583417344907
+  reproduced_refactor: null
+  abs_diff: 0.003241658265509262
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-018:T1-EffNetV2S-Severe-sig
+  paper_location: Table 1, EffNetV2S Severe, Sig.
+  claim_text: DeLong p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: MLstatkit Delong_test (cross-checked, F-015)
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0309; Bonferroni(/6) significant: False (F-014)'
+- id: C-019:T2-dn121-Normal-mean
+  paper_location: Table 2, DenseNet121 SL predicted Normal, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.44
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.4438430311231394
+  reproduced_refactor: null
+  abs_diff: 0.00384303112313944
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-020:T2-dn121-Normal-N
+  paper_location: Table 2, ... predicted Normal, N
+  claim_text: N images
+  reported_value: 739
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 739.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-021:T2-dn121-Indeterminate-mean
+  paper_location: Table 2, DenseNet121 SL predicted Indeterminate, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.61
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.6116751269035534
+  reproduced_refactor: null
+  abs_diff: 0.0016751269035535366
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-022:T2-dn121-Indeterminate-N
+  paper_location: Table 2, ... predicted Indeterminate, N
+  claim_text: N images
+  reported_value: 394
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 394.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-023:T2-dn121-Severe-mean
+  paper_location: Table 2, DenseNet121 SL predicted Severe, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.05
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.046511627906977
+  reproduced_refactor: null
+  abs_diff: 0.0034883720930229956
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-024:T2-dn121-Severe-N
+  paper_location: Table 2, ... predicted Severe, N
+  claim_text: N images
+  reported_value: 215
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 215.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-025:T2-dn121-NormalvIndeterminate-sig
+  paper_location: Table 2, dn121, Normal vs Indeterminate
+  claim_text: t-test p<0.05
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=1.46e-147
+- id: C-026:T2-dn121-NormalvSevere-sig
+  paper_location: Table 2, dn121, Normal vs Severe
+  claim_text: t-test p<0.05
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=1.01e-30
+- id: C-027:T2-dn121-IndeterminatevSevere-sig
+  paper_location: Table 2, dn121, Indeterminate vs Severe
+  claim_text: t-test p<0.05
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=3.79e-29
+- id: C-028:T2-dino_dn121-Normal-mean
+  paper_location: Table 2, DenseNet121 SSL predicted Normal, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.22
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.2166462668298654
+  reproduced_refactor: null
+  abs_diff: 0.003353733170134543
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-029:T2-dino_dn121-Normal-N
+  paper_location: Table 2, ... predicted Normal, N
+  claim_text: N images
+  reported_value: 817
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 817.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-030:T2-dino_dn121-Indeterminate-mean
+  paper_location: Table 2, DenseNet121 SSL predicted Indeterminate, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.57
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.5695364238410594
+  reproduced_refactor: null
+  abs_diff: 0.00046357615894043747
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-031:T2-dino_dn121-Indeterminate-N
+  paper_location: Table 2, ... predicted Indeterminate, N
+  claim_text: N images
+  reported_value: 302
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 302.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-032:T2-dino_dn121-Severe-mean
+  paper_location: Table 2, DenseNet121 SSL predicted Severe, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.75
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.7467248908296944
+  reproduced_refactor: null
+  abs_diff: 0.0032751091703056012
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-033:T2-dino_dn121-Severe-N
+  paper_location: Table 2, ... predicted Severe, N
+  claim_text: N images
+  reported_value: 229
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 229.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-034:T2-dino_dn121-NormalvIndeterminate-sig
+  paper_location: Table 2, dino_dn121, Normal vs Indeterminate
+  claim_text: t-test p<0.05
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=5.96e-140
+- id: C-035:T2-dino_dn121-NormalvSevere-sig
+  paper_location: Table 2, dino_dn121, Normal vs Severe
+  claim_text: t-test p<0.05
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=2.91e-24
+- id: C-036:T2-dino_dn121-IndeterminatevSevere-sig
+  paper_location: Table 2, dino_dn121, Indeterminate vs Severe
+  claim_text: t-test p<0.05
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=1.19e-43
+- id: C-037:T3-dn121-NormalxNormal-mean
+  paper_location: Table 3, dn121, pred Normal, GT Normal, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.41
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.4141414141414141
+  reproduced_refactor: null
+  abs_diff: 0.004141414141414224
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-038:T3-dn121-NormalxNormal-N
+  paper_location: Table 3, dn121, pred Normal, GT Normal, N
+  claim_text: N images
+  reported_value: 693
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 693.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-039:T3-dn121-NormalxIndeterminate-mean
+  paper_location: Table 3, dn121, pred Normal, GT Indeterminate, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.89
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.8857142857142857
+  reproduced_refactor: null
+  abs_diff: 0.004285714285714226
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-040:T3-dn121-NormalxIndeterminate-N
+  paper_location: Table 3, dn121, pred Normal, GT Indeterminate, N
+  claim_text: N images
+  reported_value: 35
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 35.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-041:T3-dn121-NormalxIndeterminate-sig
+  paper_location: Table 3, dn121, pred Normal, GT Indeterminate, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0022
+- id: C-042:T3-dn121-NormalxSevere-mean
+  paper_location: Table 3, dn121, pred Normal, GT Severe, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.91
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.9090909090909092
+  reproduced_refactor: null
+  abs_diff: 0.0009090909090907484
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-043:T3-dn121-NormalxSevere-N
+  paper_location: Table 3, dn121, pred Normal, GT Severe, N
+  claim_text: N images
+  reported_value: 11
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 11.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-044:T3-dn121-NormalxSevere-sig
+  paper_location: Table 3, dn121, pred Normal, GT Severe, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0114
+- id: C-045:T3-dn121-SeverexSevere-mean
+  paper_location: Table 3, dn121, pred Severe, GT Severe, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.9
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.8970588235294117
+  reproduced_refactor: null
+  abs_diff: 0.002941176470588225
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-046:T3-dn121-SeverexSevere-N
+  paper_location: Table 3, dn121, pred Severe, GT Severe, N
+  claim_text: N images
+  reported_value: 68
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 68.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-047:T3-dn121-SeverexNormal-mean
+  paper_location: Table 3, dn121, pred Severe, GT Normal, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.2
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.2
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-048:T3-dn121-SeverexNormal-N
+  paper_location: Table 3, dn121, pred Severe, GT Normal, N
+  claim_text: N images
+  reported_value: 45
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 45.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-049:T3-dn121-SeverexNormal-sig
+  paper_location: Table 3, dn121, pred Severe, GT Normal, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0112
+- id: C-050:T3-dn121-SeverexIndeterminate-mean
+  paper_location: Table 3, dn121, pred Severe, GT Indeterminate, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.08
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.0784313725490198
+  reproduced_refactor: null
+  abs_diff: 0.0015686274509802978
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-051:T3-dn121-SeverexIndeterminate-N
+  paper_location: Table 3, dn121, pred Severe, GT Indeterminate, N
+  claim_text: N images
+  reported_value: 102
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 102.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-052:T3-dn121-SeverexIndeterminate-sig
+  paper_location: Table 3, dn121, pred Severe, GT Indeterminate, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0615
+- id: C-053:T3-dino_dn121-NormalxNormal-mean
+  paper_location: Table 3, dino_dn121, pred Normal, GT Normal, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.16
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.1630434782608696
+  reproduced_refactor: null
+  abs_diff: 0.003043478260869703
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-054:T3-dino_dn121-NormalxNormal-N
+  paper_location: Table 3, dino_dn121, pred Normal, GT Normal, N
+  claim_text: N images
+  reported_value: 736
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 736.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-055:T3-dino_dn121-NormalxIndeterminate-mean
+  paper_location: Table 3, dino_dn121, pred Normal, GT Indeterminate, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.73
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.734375
+  reproduced_refactor: null
+  abs_diff: 0.004375000000000018
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-056:T3-dino_dn121-NormalxIndeterminate-N
+  paper_location: Table 3, dino_dn121, pred Normal, GT Indeterminate, N
+  claim_text: N images
+  reported_value: 64
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 64.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-057:T3-dino_dn121-NormalxIndeterminate-sig
+  paper_location: Table 3, dino_dn121, pred Normal, GT Indeterminate, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0000
+- id: C-058:T3-dino_dn121-NormalxSevere-mean
+  paper_location: Table 3, dino_dn121, pred Normal, GT Severe, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.59
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.588235294117647
+  reproduced_refactor: null
+  abs_diff: 0.0017647058823531125
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-059:T3-dino_dn121-NormalxSevere-N
+  paper_location: Table 3, dino_dn121, pred Normal, GT Severe, N
+  claim_text: N images
+  reported_value: 17
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 17.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-060:T3-dino_dn121-NormalxSevere-sig
+  paper_location: Table 3, dino_dn121, pred Normal, GT Severe, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0121
+- id: C-061:T3-dino_dn121-SeverexSevere-mean
+  paper_location: Table 3, dino_dn121, pred Severe, GT Severe, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.54
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.5416666666666667
+  reproduced_refactor: null
+  abs_diff: 0.0016666666666667052
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-062:T3-dino_dn121-SeverexSevere-N
+  paper_location: Table 3, dino_dn121, pred Severe, GT Severe, N
+  claim_text: N images
+  reported_value: 72
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 72.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-063:T3-dino_dn121-SeverexNormal-mean
+  paper_location: Table 3, dino_dn121, pred Severe, GT Normal, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.93
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.9298245614035088
+  reproduced_refactor: null
+  abs_diff: 0.000175438596491162
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-064:T3-dino_dn121-SeverexNormal-N
+  paper_location: Table 3, dino_dn121, pred Severe, GT Normal, N
+  claim_text: N images
+  reported_value: 57
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 57.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-065:T3-dino_dn121-SeverexNormal-sig
+  paper_location: Table 3, dino_dn121, pred Severe, GT Normal, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0012
+- id: C-066:T3-dino_dn121-SeverexIndeterminate-mean
+  paper_location: Table 3, dino_dn121, pred Severe, GT Indeterminate, mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.79
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.79
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-067:T3-dino_dn121-SeverexIndeterminate-N
+  paper_location: Table 3, dino_dn121, pred Severe, GT Indeterminate, N
+  claim_text: N images
+  reported_value: 100
+  script: verification/reproduce_paper_tables.py
+  function: pandas count
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 100.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-068:T3-dino_dn121-SeverexIndeterminate-sig
+  paper_location: Table 3, dino_dn121, pred Severe, GT Indeterminate, Sig. vs Ref
+  claim_text: t-test p<0.05 vs correct group
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: p=0.0162
+- id: C-069:T4-DenseNet121-Normal-SL
+  paper_location: Table 4, DenseNet121 Normal, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.44
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.4438430311231394
+  reproduced_refactor: null
+  abs_diff: 0.00384303112313944
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-070:T4-DenseNet121-Normal-SSL
+  paper_location: Table 4, DenseNet121 Normal, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.22
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.2166462668298654
+  reproduced_refactor: null
+  abs_diff: 0.003353733170134543
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-071:T4-DenseNet121-Normal-sig
+  paper_location: Table 4, DenseNet121 Normal, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0000; Bonferroni(/9) significant: True; single-split result, see F-021'
+- id: C-072:T4-DenseNet121-Indeterminate-SL
+  paper_location: Table 4, DenseNet121 Indeterminate, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.61
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.6116751269035534
+  reproduced_refactor: null
+  abs_diff: 0.0016751269035535366
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-073:T4-DenseNet121-Indeterminate-SSL
+  paper_location: Table 4, DenseNet121 Indeterminate, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.57
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.5695364238410594
+  reproduced_refactor: null
+  abs_diff: 0.00046357615894043747
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-074:T4-DenseNet121-Indeterminate-sig
+  paper_location: Table 4, DenseNet121 Indeterminate, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.3165; Bonferroni(/9) significant: False; single-split result, see F-021'
+- id: C-075:T4-DenseNet121-Severe-SL
+  paper_location: Table 4, DenseNet121 Severe, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.05
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.046511627906977
+  reproduced_refactor: null
+  abs_diff: 0.0034883720930229956
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-076:T4-DenseNet121-Severe-SSL
+  paper_location: Table 4, DenseNet121 Severe, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.75
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.7467248908296944
+  reproduced_refactor: null
+  abs_diff: 0.0032751091703056012
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-077:T4-DenseNet121-Severe-sig
+  paper_location: Table 4, DenseNet121 Severe, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0000; Bonferroni(/9) significant: True; single-split result, see F-021'
+- id: C-078:T4-ResNet50-Normal-SL
+  paper_location: Table 4, ResNet50 Normal, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.46
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.4646464646464648
+  reproduced_refactor: null
+  abs_diff: 0.004646464646464787
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-079:T4-ResNet50-Normal-SSL
+  paper_location: Table 4, ResNet50 Normal, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.21
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.2138660399529966
+  reproduced_refactor: null
+  abs_diff: 0.003866039952996614
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-080:T4-ResNet50-Normal-sig
+  paper_location: Table 4, ResNet50 Normal, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0000; Bonferroni(/9) significant: True; single-split result, see F-021'
+- id: C-081:T4-ResNet50-Indeterminate-SL
+  paper_location: Table 4, ResNet50 Indeterminate, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.87
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.872413793103448
+  reproduced_refactor: null
+  abs_diff: 0.0024137931034480253
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-082:T4-ResNet50-Indeterminate-SSL
+  paper_location: Table 4, ResNet50 Indeterminate, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.41
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.4106583072100314
+  reproduced_refactor: null
+  abs_diff: 0.0006583072100312393
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-083:T4-ResNet50-Indeterminate-sig
+  paper_location: Table 4, ResNet50 Indeterminate, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0000; Bonferroni(/9) significant: True; single-split result, see F-021'
+- id: C-084:T4-ResNet50-Severe-SL
+  paper_location: Table 4, ResNet50 Severe, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.77
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.7744360902255638
+  reproduced_refactor: null
+  abs_diff: 0.0044360902255637935
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-085:T4-ResNet50-Severe-SSL
+  paper_location: Table 4, ResNet50 Severe, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.7
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.696629213483146
+  reproduced_refactor: null
+  abs_diff: 0.003370786516853963
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-086:T4-ResNet50-Severe-sig
+  paper_location: Table 4, ResNet50 Severe, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: e38ae6b2c57da70835c3037956f0fccdfe9f9310120acfbe6db8033a53bc3043
+  - path: analysis/six_model_seed_test2/dino_rn50/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: fcd572394a680a0b1419cab6ffd5248554867e01445692aa7e19a70c452d73ca
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.1798; Bonferroni(/9) significant: False; single-split result, see F-021'
+- id: C-087:T4-EffNetV2S-Normal-SL
+  paper_location: Table 4, EffNetV2S Normal, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.32
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.32404181184669
+  reproduced_refactor: null
+  abs_diff: 0.004041811846689836
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-088:T4-EffNetV2S-Normal-SSL
+  paper_location: Table 4, EffNetV2S Normal, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.21
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.2122587968217935
+  reproduced_refactor: null
+  abs_diff: 0.0022587968217935295
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-089:T4-EffNetV2S-Normal-sig
+  paper_location: Table 4, EffNetV2S Normal, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0002; Bonferroni(/9) significant: True; single-split result, see F-021'
+- id: C-090:T4-EffNetV2S-Indeterminate-SL
+  paper_location: Table 4, EffNetV2S Indeterminate, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.71
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.7056737588652484
+  reproduced_refactor: null
+  abs_diff: 0.004326241134751552
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-091:T4-EffNetV2S-Indeterminate-SSL
+  paper_location: Table 4, EffNetV2S Indeterminate, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.74
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.735191637630662
+  reproduced_refactor: null
+  abs_diff: 0.004808362369338237
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-092:T4-EffNetV2S-Indeterminate-sig
+  paper_location: Table 4, EffNetV2S Indeterminate, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: Not Sig.
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: Not Sig.
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.4917; Bonferroni(/9) significant: False; single-split result, see F-021'
+- id: C-093:T4-EffNetV2S-Severe-SL
+  paper_location: Table 4, EffNetV2S Severe, SL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 1.85
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 1.853658536585366
+  reproduced_refactor: null
+  abs_diff: 0.003658536585365857
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-094:T4-EffNetV2S-Severe-SSL
+  paper_location: Table 4, EffNetV2S Severe, SSL mean CPSL
+  claim_text: mean CPSL
+  reported_value: 2.04
+  script: verification/reproduce_paper_tables.py
+  function: pandas groupby mean
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 2.0388888888888888
+  reproduced_refactor: null
+  abs_diff: 0.0011111111111112848
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-095:T4-EffNetV2S-Severe-sig
+  paper_location: Table 4, EffNetV2S Severe, Sig.
+  claim_text: t-test p<0.05 (uncorrected)
+  reported_value: '*'
+  script: verification/reproduce_paper_tables.py
+  function: scipy levene+ttest_ind
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 6bf699806a9f4e503087c4148018f2f7cab58c56a4304de2a5b12a572823cf1c
+  - path: analysis/six_model_seed_test2/dino_effnetv2s/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 0ea74eed2d541a8203ea3f37f22f1d97e5c4e3c501a2ce1e83b968b6d7915e7d
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: '*'
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: 'p=0.0159; Bonferroni(/9) significant: False; single-split result, see F-021'
+- id: C-096:TXT-430-N_SL
+  paper_location: Sec. 4.x text l.430, SL
+  claim_text: confident Normal predictions (CPSL=1), SL
+  reported_value: 481
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 481.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-097:TXT-430-N_SSL
+  paper_location: Sec. 4.x text l.430, SSL
+  claim_text: confident Normal predictions (CPSL=1), SSL
+  reported_value: 669
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 669.0
+  reproduced_refactor: null
+  abs_diff: 0.0
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: ''
+- id: C-098:TXT-432-dn121-Normal-CPSL1
+  paper_location: text l.432, dn121, predicted Normal, CPSL=1, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 97
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 96.25779625779626
+  reproduced_refactor: null
+  abs_diff: 0.742203742203742
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: discrepancy
+  notes: computed 96.26% (N=481); see F-019
+- id: C-099:TXT-432-dn121-Normal-CPSL2
+  paper_location: text l.432, dn121, predicted Normal, CPSL=2, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 92
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 92.02127659574468
+  reproduced_refactor: null
+  abs_diff: 0.02127659574468055
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 92.02% (N=188)
+- id: C-100:TXT-432-dn121-Normal-CPSL3
+  paper_location: text l.432, dn121, predicted Normal, CPSL=3, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 81
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 81.42857142857143
+  reproduced_refactor: null
+  abs_diff: 0.4285714285714306
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 81.43% (N=70)
+- id: C-101:TXT-432-dn121-Severe-CPSL1
+  paper_location: text l.432, dn121, predicted Severe, CPSL=1, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 47
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 47.22222222222222
+  reproduced_refactor: null
+  abs_diff: 0.22222222222222143
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 47.22% (N=36)
+- id: C-102:TXT-432-dn121-Severe-CPSL2
+  paper_location: text l.432, dn121, predicted Severe, CPSL=2, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 30
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 30.82706766917293
+  reproduced_refactor: null
+  abs_diff: 0.82706766917293
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: discrepancy
+  notes: computed 30.83% (N=133); see F-019
+- id: C-103:TXT-432-dn121-Severe-CPSL3
+  paper_location: text l.432, dn121, predicted Severe, CPSL=3, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 22
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: 06e0a09525cb39a3da16acadd81d97e3eadc9d0e182d848754d60616743bf3a2
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 21.73913043478261
+  reproduced_refactor: null
+  abs_diff: 0.2608695652173907
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 21.74% (N=46)
+- id: C-104:TXT-432-dino_dn121-Normal-CPSL1
+  paper_location: text l.432, dino_dn121, predicted Normal, CPSL=1, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 95
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 94.76831091180867
+  reproduced_refactor: null
+  abs_diff: 0.23168908819133094
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 94.77% (N=669)
+- id: C-105:TXT-432-dino_dn121-Normal-CPSL2
+  paper_location: text l.432, dino_dn121, predicted Normal, CPSL=2, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 71
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 70.58823529411765
+  reproduced_refactor: null
+  abs_diff: 0.4117647058823479
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 70.59% (N=119)
+- id: C-106:TXT-432-dino_dn121-Normal-CPSL3
+  paper_location: text l.432, dino_dn121, predicted Normal, CPSL=3, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 62
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 62.06896551724138
+  reproduced_refactor: null
+  abs_diff: 0.06896551724138078
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 62.07% (N=29)
+- id: C-107:TXT-432-dino_dn121-Severe-CPSL1
+  paper_location: text l.432, dino_dn121, predicted Severe, CPSL=1, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 45
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 45.45454545454545
+  reproduced_refactor: null
+  abs_diff: 0.45454545454545325
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 45.45% (N=88)
+- id: C-108:TXT-432-dino_dn121-Severe-CPSL2
+  paper_location: text l.432, dino_dn121, predicted Severe, CPSL=2, accuracy %
+  claim_text: accuracy (%) by CPSL
+  reported_value: 23
+  script: verification/reproduce_paper_tables.py
+  function: pandas
+  legacy_script: src/analysis_new.py
+  config_hparams:
+    cp: LAC
+    single_pass: true
+    num_mc_cols_unused: 50
+  alpha: 0.1
+  seeds:
+    calibration_test_split_random_state: 0
+  split: 'test2: 338 calibration / 1,348 test (image-level, 20%)'
+  input_csv:
+  - path: analysis/six_model_seed_test2/dino_dn121/3/lac/alpha_010/mc_lac_run_alpha0.1.csv
+    sha256: c26c199e180b285eced179604ba94b851114990bf2dd722bc0395f912c92cbcd
+  model_checkpoint: UNKNOWN (upstream, Phase 8)
+  reproduced_legacy: 22.52252252252252
+  reproduced_refactor: null
+  abs_diff: 0.4774774774774784
+  evidence: saved legacy outputs, independently recomputed; legacy code NOT re-executed
+  status: verified
+  notes: computed 22.52% (N=111)

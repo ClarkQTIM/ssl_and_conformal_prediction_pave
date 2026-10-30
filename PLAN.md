@@ -92,3 +92,17 @@ Bugs that change a paper number are fixed and the paper updated (paper edits are
 2. Location of the paper source / PDF (needed for Phase 3).
 3. Location of the inherited patient-split CSV and the original images (`/data/SEED` is gone).
 4. Which conformal library, if any, was used vs. hand-rolled (`cuq_classification_algorithms.py` appears hand-rolled).
+
+## Where everything is documented (kept current)
+| What | File |
+|---|---|
+| Findings (bugs, paper/claim problems), severity, evidence, verdicts | `AUDIT.md` |
+| Every claim/table cell -> script -> input hash -> split/seed -> reproduced value (GENERATED) | `ledger/claims_ledger.yaml` via `verification/reproduce_paper_tables.py` |
+| Every difference between legacy code and any change, why, effect on paper numbers | `DIVERGENCES.md` |
+| Every command run as evidence: command, commit, seeds, env, output hashes | `RUNLOG.md` |
+| Executable evidence for findings | `tests/` (xfail(strict) = confirmed bug) |
+| Experiments that quantify a finding | `experiments/` (outputs untracked, hashed in `RUNLOG.md`) |
+| Environment | `provenance/` |
+| Plan, ground rules, checklist | `PLAN.md` |
+| Code-to-paper map (Phase 1) | `INVENTORY.md`: **NOT YET WRITTEN** |
+| Generated narrative for reviewers (Phase 7) | `paper_walkthrough.md`: **NOT YET GENERATED** |
